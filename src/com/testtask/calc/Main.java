@@ -1,6 +1,7 @@
 package com.testtask.calc;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -86,88 +87,57 @@ public class Main {
         }
     }
 
+    static String validAnswer(int answer) throws Exception {
+        String strAnswer;
+        if (countOfRomans == 2) {
+            if (answer >= 0) {
+                strAnswer = intToRoman(answer);
+            } else {
+                throw new Exception("в римской системе нет отрицательных чисел");
+            }
+        } else {
+            strAnswer = String.valueOf(answer);
+        }
+        return strAnswer;
+    }
+
     public static String calc(String input) throws Exception {
         input = input.replaceAll("\\s+","");
         inputVolumes = new ArrayList<>();
-        Pattern pattern1 = Pattern.compile("\\d+");
-        Matcher matcher1 = pattern1.matcher(input);
+
         String[] strings = input.split("[-+/*]");
-        if (strings.length > 2){
-            while (matcher1.find()){
-                int start = matcher1.start();
-                int end = matcher1.end();
-                if(!input.substring(start,end).equals("")) {
-                    inputVolumes.add(input.substring(start, end));
-                }
-            }
-        }else  if (strings.length == 2){
-            for (String s: strings) {
-                if (!s.contains("-"))
-                    inputVolumes.add(s);
-            }
+//      Проверка на условие, что перед числами стоит унарный минус, было убрано, т.к. в задании указано, что калькулятор работает только с целыми арабскими от 1 до 10
+//        Pattern pattern1 = Pattern.compile("\\d+");
+//        Matcher matcher1 = pattern1.matcher(input);
+//        if (strings.length > 2){
+//            while (matcher1.find()){
+//                int start = matcher1.start();
+//                int end = matcher1.end();
+//                if(!input.substring(start,end).equals("")) {
+//                    inputVolumes.add(input.substring(start, end));
+//                }
+//            }
+        if (strings.length == 2){
+            Collections.addAll(inputVolumes, strings);
         }
         if (strings.length != 2){
             throw new Exception("формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");
         }
         intVolumes = new ArrayList<>();
-        int answer;
-        String strAnswer = null;
+        int answer = 0;
         valueCheck();
         String operator = input.substring(inputVolumes.get(0).length(), inputVolumes.get(0).length() + 1);
         switch (operator) {
-            case "+" -> {
-                answer = intVolumes.get(0) + intVolumes.get(1);
-                if (countOfRomans == 2) {
-                    if (answer >= 0) {
-                        strAnswer = intToRoman(answer);
-                    } else {
-                        throw new Exception("в римской системе нет отрицательных чисел");
-                    }
-                } else {
-                    strAnswer = String.valueOf(answer);
-                }
-            }
-            case "-" -> {
-                valueCheck();
+            case "+" ->
+                    answer = intVolumes.get(0) + intVolumes.get(1);
+            case "-" ->
                 answer = intVolumes.get(0) - intVolumes.get(1);
-                if (countOfRomans == 2) {
-                    if (answer >= 0) {
-                        strAnswer = intToRoman(answer);
-                    } else {
-                        throw new Exception("в римской системе нет отрицательных чисел");
-                    }
-                } else {
-                    strAnswer = String.valueOf(answer);
-                }
-            }
-            case "*" -> {
-                valueCheck();
+            case "*" ->
                 answer = intVolumes.get(0) * intVolumes.get(1);
-                if (countOfRomans == 2) {
-                    if (answer >= 0) {
-                        strAnswer = intToRoman(answer);
-                    } else {
-                        throw new Exception("в римской системе нет отрицательных чисел");
-                    }
-                } else {
-                    strAnswer = String.valueOf(answer);
-                }
-            }
-            case "/" -> {
-                valueCheck();
+            case "/" ->
                 answer = intVolumes.get(0) / intVolumes.get(1);
-                if (countOfRomans == 2) {
-                    if (answer >= 0) {
-                        strAnswer = intToRoman(answer);
-                    } else {
-                        throw new Exception("в римской системе нет отрицательных чисел");
-                    }
-                } else {
-                    strAnswer = String.valueOf(answer);
-                }
-            }
         }
-        return strAnswer;
+        return validAnswer(answer);
     }
 
     public static void main(String[] args){
