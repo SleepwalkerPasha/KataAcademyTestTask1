@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5722a32f-cd26-4a02-a702-984545e1c0fd" name="Changes" comment="Method valueCheck changes: now works with regex to find roman numerals&#10;method isRoman deleted&#10;works from 1 to 10 integers">
+    <list default="true" id="5722a32f-cd26-4a02-a702-984545e1c0fd" name="Changes" comment="Method valueCheck changes: now works with regex to find roman numerals&#10;method isRoman deleted&#10;works from 1 to 10 integers&#10;refactor code to make it more readable">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/testtask/calc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/testtask/calc/Main.java" afterDir="false" />
     </list>
@@ -22,6 +22,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -66,7 +67,8 @@
       <option name="presentableId" value="Default" />
       <updated>1657882909993</updated>
       <workItem from="1657882911978" duration="5715000" />
-      <workItem from="1657892681655" duration="8958000" />
+      <workItem from="1657892681655" duration="9082000" />
+      <workItem from="1657902129799" duration="1622000" />
     </task>
     <task id="LOCAL-00001" summary="Console Calculator that works with 2 integer or roman values and can calculate 4 simple operations">
       <created>1657898432644</created>
@@ -96,7 +98,28 @@
       <option name="project" value="LOCAL" />
       <updated>1657901366972</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Method valueCheck changes: now works with regex to find roman numerals&#10;method isRoman deleted&#10;works from 1 to 10 integers">
+      <created>1657901742420</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1657901742420</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Method valueCheck changes: now works with regex to find roman numerals&#10;method isRoman deleted&#10;works from 1 to 10 integers">
+      <created>1657901762765</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1657901762765</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Method valueCheck changes: now works with regex to find roman numerals&#10;method isRoman deleted&#10;works from 1 to 10 integers&#10;refactor code to make it more readable">
+      <created>1657903187546</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1657903187546</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,6 +140,7 @@
     <MESSAGE value="Console Calculator that works with 2 integer or roman values and can calculate 4 simple operations" />
     <MESSAGE value="Method valueCheck changes: now works with regex to find roman numerals&#10;method isRoman deleted" />
     <MESSAGE value="Method valueCheck changes: now works with regex to find roman numerals&#10;method isRoman deleted&#10;works from 1 to 10 integers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Method valueCheck changes: now works with regex to find roman numerals&#10;method isRoman deleted&#10;works from 1 to 10 integers" />
+    <MESSAGE value="Method valueCheck changes: now works with regex to find roman numerals&#10;method isRoman deleted&#10;works from 1 to 10 integers&#10;refactor code to make it more readable" />
+    <option name="LAST_COMMIT_MESSAGE" value="Method valueCheck changes: now works with regex to find roman numerals&#10;method isRoman deleted&#10;works from 1 to 10 integers&#10;refactor code to make it more readable" />
   </component>
 </project>

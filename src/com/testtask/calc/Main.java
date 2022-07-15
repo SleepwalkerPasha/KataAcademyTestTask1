@@ -104,23 +104,31 @@ public class Main {
     public static String calc(String input) throws Exception {
         input = input.replaceAll("\\s+","");
         inputVolumes = new ArrayList<>();
-
-        String[] strings = input.split("[-+/*]");
+        Pattern pattern1 = Pattern.compile("[-+/*]");
+        ArrayList<String> operators = new ArrayList<>();
+        Matcher matcher1 = pattern1.matcher(input);
+        while (matcher1.find()){
+            int start = matcher1.start();
+            int end = matcher1.end();
+            operators.add(input.substring(start,end));
+        }
+        String[] nums = input.split("[-+/*]");
 //      Проверка на условие, что перед числами стоит унарный минус, было убрано, т.к. в задании указано, что калькулятор работает только с целыми арабскими от 1 до 10
 //        Pattern pattern1 = Pattern.compile("\\d+");
 //        Matcher matcher1 = pattern1.matcher(input);
-//        if (strings.length > 2){
-//            while (matcher1.find()){
+//        if (strings.length > 2) {
+//            while (matcher1.find()) {
 //                int start = matcher1.start();
 //                int end = matcher1.end();
-//                if(!input.substring(start,end).equals("")) {
+//                if (!input.substring(start, end).equals("")) {
 //                    inputVolumes.add(input.substring(start, end));
 //                }
 //            }
-        if (strings.length == 2){
-            Collections.addAll(inputVolumes, strings);
+//        }
+        if (nums.length == 2 && operators.size() == 1){
+            Collections.addAll(inputVolumes, nums);
         }
-        if (strings.length != 2){
+        else {
             throw new Exception("формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");
         }
         intVolumes = new ArrayList<>();
