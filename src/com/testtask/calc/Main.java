@@ -66,6 +66,7 @@ public class Main {
     }
 
     static void valueCheck() throws Exception {
+        int addable;
         countOfRomans = 0;
         for (String volume : inputVolumes) {
             Pattern pattern = Pattern.compile("^(?=[MDCLXVI])M*(C[MD]|D?C{0,3})(X[CL]|L?X{0,3})(I[XV]|V?I{0,3})$");
@@ -76,13 +77,23 @@ public class Main {
         }
         if (countOfRomans == 2){
             for (String volume : inputVolumes) {
-                intVolumes.add(romanToInt(volume));
+                addable = romanToInt(volume);
+                if (addable <= 10 && addable >= 1)
+                    intVolumes.add(romanToInt(volume));
+                else {
+                    throw new Exception("Введеное число " + volume + " не входит в диапазон принимаемых значений. Введите числа в диапазоне от I до X включительно.");
+                }
             }
         }else if (countOfRomans == 1){
             throw new Exception("используются одновременно разные системы счисления");
         } else {
             for (String volume: inputVolumes) {
-                intVolumes.add(Integer.valueOf(volume));
+                addable = Integer.valueOf(volume);
+                if (addable <= 10 && addable >= 1)
+                    intVolumes.add(addable);
+                else {
+                    throw new Exception("Введеное число " + volume + " не входит в диапазон принимаемых значений. Введите числа в диапазоне от 1 до 10 включительно.");
+                }
             }
         }
     }
@@ -90,10 +101,10 @@ public class Main {
     static String validAnswer(int answer) throws Exception {
         String strAnswer;
         if (countOfRomans == 2) {
-            if (answer >= 0) {
+            if (answer > 0) {
                 strAnswer = intToRoman(answer);
             } else {
-                throw new Exception("в римской системе нет отрицательных чисел");
+                throw new Exception("в римской системе нет неположительных чисел");
             }
         } else {
             strAnswer = String.valueOf(answer);

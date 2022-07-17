@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5722a32f-cd26-4a02-a702-984545e1c0fd" name="Changes" comment="Method valueCheck changes: now works with regex to find roman numerals&#10;method isRoman deleted&#10;works from 1 to 10 integers&#10;refactor code to make it more readable">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_07_2022_19_15__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_07_2022_19_15__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/testtask/calc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/testtask/calc/Main.java" afterDir="false" />
     </list>
@@ -68,7 +69,8 @@
       <updated>1657882909993</updated>
       <workItem from="1657882911978" duration="5715000" />
       <workItem from="1657892681655" duration="9082000" />
-      <workItem from="1657902129799" duration="1622000" />
+      <workItem from="1657902129799" duration="1785000" />
+      <workItem from="1658060147763" duration="920000" />
     </task>
     <task id="LOCAL-00001" summary="Console Calculator that works with 2 integer or roman values and can calculate 4 simple operations">
       <created>1657898432644</created>
@@ -119,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657903187546</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Method valueCheck changes: now works with regex to find roman numerals&#10;method isRoman deleted&#10;works from 1 to 10 integers&#10;refactor code to make it more readable">
+      <created>1657903803569</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1657903803569</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
